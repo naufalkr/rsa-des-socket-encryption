@@ -1,5 +1,11 @@
 # RSA-DES-socket-encryption
-Python implementation of DES encryption for message transfer over sockets between client and server.
+Python implementation of RSA and DES encryption for message transfer over sockets between client and server.
+
+## PKA Server Setup
+Run the PKA server first, which will wait for an incoming key request from server and client:
+```
+python pka_server.py
+```
 
 ## Server Setup
 Run the server first, which will wait for an incoming client connection:
