@@ -1,9 +1,8 @@
 import socket
 import json
 from Crypto.PublicKey import RSA
-from Crypto.Cipher import PKCS1_OAEP
 from des_code import generate_key, generate_round_keys, encrypt, decrypt, bin2hex, hex2bin, bin2ascii
-from rsa_utils import rsa_encrypt, rsa_decrypt
+from rsa_utils import rsa_encrypt
 
 pka_host = 'localhost'
 pka_port = 5001

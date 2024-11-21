@@ -1,16 +1,15 @@
 import socket
-from des_code import generate_key, generate_round_keys, encrypt, decrypt, bin2hex, hex2bin, bin2ascii
+from des_code import generate_round_keys, encrypt, decrypt, bin2hex, hex2bin, bin2ascii
 import socket
 import json
 from Crypto.PublicKey import RSA
-from Crypto.Cipher import PKCS1_OAEP
 from rsa_utils import rsa_encrypt, rsa_decrypt
 
 pka_host = 'localhost'
 pka_port = 5001
 
 def client_program():
-    # Generate RSA keys and register directly with PKA
+    # Generate RSA keys and register it to PKA
     key = RSA.generate(2048)
     public_key = key.publickey().export_key().decode('utf-8')
     private_key = key.export_key().decode('utf-8')

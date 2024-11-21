@@ -4,14 +4,14 @@ from Crypto.PublicKey import RSA
 from datetime import datetime
 import json
 
-keys_repository = {}  # {key_id: {'key': key_str, 'timestamp': datetime}}
-authority_host = 'localhost'
-authority_port = 5001
+keys_repository = {} 
+pka_host = 'localhost'
+pka_port = 5001
 
 def pka_program():
     # Create socket server
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind((authority_host, authority_port))
+    server_socket.bind((pka_host, pka_port))
     server_socket.listen(5)
     print(f"Public Key Authority started")
 
@@ -50,7 +50,7 @@ def pka_program():
         else:
             response = {'status': 'error', 'message': 'Invalid action'}
 
-        # Send the response back to client
+        # Send response back to client
         client_socket.send(json.dumps(response).encode('utf-8'))
         client_socket.close()
 
